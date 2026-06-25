@@ -20,7 +20,11 @@ docs = {
 )
 def read_documents(
     doc_id: str=Field(description="The ID of the document to read."),
-)
+):
+    if doc_id not in docs:
+        raise ValueError(f"Doc with id {doc_id} not found.")
+    
+    return docs[doc_id]
 # TODO: Write a tool to edit a doc
 # TODO: Write a resource to return all doc id's
 # TODO: Write a resource to return the contents of a particular doc
