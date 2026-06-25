@@ -13,6 +13,13 @@ docs = {
 }
 
 # TODO: Write a tool to read a doc
+@mcp.tool(
+    name="name_doc_contents",
+    description="Read the contents of a document and return its contents as a string."
+)
+def read_documents(
+    doc_id: str=Field(description="The ID of the document to read."),
+)
 # TODO: Write a tool to edit a doc
 # TODO: Write a resource to return all doc id's
 # TODO: Write a resource to return the contents of a particular doc
